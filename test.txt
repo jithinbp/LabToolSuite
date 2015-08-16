@@ -1,0 +1,124 @@
+running install
+running bdist_egg
+running egg_info
+writing requirements to Labtools.egg-info/requires.txt
+writing Labtools.egg-info/PKG-INFO
+writing top-level names to Labtools.egg-info/top_level.txt
+writing dependency_links to Labtools.egg-info/dependency_links.txt
+reading manifest file 'Labtools.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'Labtools.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_py
+copying Labtools/experiment.py -> build/lib.linux-x86_64-2.7/Labtools
+copying Labtools/experiment_standalone.py -> build/lib.linux-x86_64-2.7/Labtools
+creating build/lib.linux-x86_64-2.7/Labtools/templates
+copying Labtools/templates/template_exp.py -> build/lib.linux-x86_64-2.7/Labtools/templates
+copying Labtools/templates/__init__.py -> build/lib.linux-x86_64-2.7/Labtools/templates
+copying Labtools/templates/template_exp_standalone.py -> build/lib.linux-x86_64-2.7/Labtools/templates
+copying Labtools/templates/template_scope.py -> build/lib.linux-x86_64-2.7/Labtools/templates
+creating build/bdist.linux-x86_64/egg
+creating build/bdist.linux-x86_64/egg/Labtools
+copying build/lib.linux-x86_64-2.7/Labtools/achan.py -> build/bdist.linux-x86_64/egg/Labtools
+creating build/bdist.linux-x86_64/egg/Labtools/calib_data
+copying build/lib.linux-x86_64-2.7/Labtools/calib_data/__init__.py -> build/bdist.linux-x86_64/egg/Labtools/calib_data
+copying build/lib.linux-x86_64-2.7/Labtools/calib_data/calibs2.py -> build/bdist.linux-x86_64/egg/Labtools/calib_data
+copying build/lib.linux-x86_64-2.7/Labtools/template_exp.py -> build/bdist.linux-x86_64/egg/Labtools
+copying build/lib.linux-x86_64-2.7/Labtools/customui_rc.py -> build/bdist.linux-x86_64/egg/Labtools
+copying build/lib.linux-x86_64-2.7/Labtools/commands_proto.py -> build/bdist.linux-x86_64/egg/Labtools
+copying build/lib.linux-x86_64-2.7/Labtools/SPI_class.py -> build/bdist.linux-x86_64/egg/Labtools
+copying build/lib.linux-x86_64-2.7/Labtools/NRF24L01_class.py -> build/bdist.linux-x86_64/egg/Labtools
+creating build/bdist.linux-x86_64/egg/Labtools/templates
+copying build/lib.linux-x86_64-2.7/Labtools/templates/template_exp.py -> build/bdist.linux-x86_64/egg/Labtools/templates
+copying build/lib.linux-x86_64-2.7/Labtools/templates/__init__.py -> build/bdist.linux-x86_64/egg/Labtools/templates
+copying build/lib.linux-x86_64-2.7/Labtools/templates/template_exp_standalone.py -> build/bdist.linux-x86_64/egg/Labtools/templates
+copying build/lib.linux-x86_64-2.7/Labtools/templates/template_scope.py -> build/bdist.linux-x86_64/egg/Labtools/templates
+copying build/lib.linux-x86_64-2.7/Labtools/digital_channel.py -> build/bdist.linux-x86_64/egg/Labtools
+copying build/lib.linux-x86_64-2.7/Labtools/__init__.py -> build/bdist.linux-x86_64/egg/Labtools
+copying build/lib.linux-x86_64-2.7/Labtools/interface.py -> build/bdist.linux-x86_64/egg/Labtools
+creating build/bdist.linux-x86_64/egg/Labtools/widgets
+copying build/lib.linux-x86_64-2.7/Labtools/widgets/clickingOptions.py -> build/bdist.linux-x86_64/egg/Labtools/widgets
+copying build/lib.linux-x86_64-2.7/Labtools/widgets/clicking.py -> build/bdist.linux-x86_64/egg/Labtools/widgets
+copying build/lib.linux-x86_64-2.7/Labtools/widgets/__init__.py -> build/bdist.linux-x86_64/egg/Labtools/widgets
+copying build/lib.linux-x86_64-2.7/Labtools/widgets/sliding.py -> build/bdist.linux-x86_64/egg/Labtools/widgets
+copying build/lib.linux-x86_64-2.7/Labtools/I2C_class.py -> build/bdist.linux-x86_64/egg/Labtools
+copying build/lib.linux-x86_64-2.7/Labtools/packet_handler.py -> build/bdist.linux-x86_64/egg/Labtools
+copying build/lib.linux-x86_64-2.7/Labtools/template_exp_standalone.py -> build/bdist.linux-x86_64/egg/Labtools
+copying build/lib.linux-x86_64-2.7/Labtools/calibrate_bipolars.py -> build/bdist.linux-x86_64/egg/Labtools
+copying build/lib.linux-x86_64-2.7/Labtools/scope_interface.py -> build/bdist.linux-x86_64/egg/Labtools
+copying build/lib.linux-x86_64-2.7/Labtools/custom_widgets.py -> build/bdist.linux-x86_64/egg/Labtools
+copying build/lib.linux-x86_64-2.7/Labtools/template_scope.py -> build/bdist.linux-x86_64/egg/Labtools
+copying build/lib.linux-x86_64-2.7/Labtools/experiment.py -> build/bdist.linux-x86_64/egg/Labtools
+copying build/lib.linux-x86_64-2.7/Labtools/experiment_standalone.py -> build/bdist.linux-x86_64/egg/Labtools
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/achan.py to achan.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/calib_data/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/calib_data/calibs2.py to calibs2.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/template_exp.py to template_exp.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/customui_rc.py to customui_rc.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/commands_proto.py to commands_proto.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/SPI_class.py to SPI_class.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/NRF24L01_class.py to NRF24L01_class.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/templates/template_exp.py to template_exp.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/templates/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/templates/template_exp_standalone.py to template_exp_standalone.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/templates/template_scope.py to template_scope.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/digital_channel.py to digital_channel.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/interface.py to interface.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/widgets/clickingOptions.py to clickingOptions.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/widgets/clicking.py to clicking.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/widgets/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/widgets/sliding.py to sliding.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/I2C_class.py to I2C_class.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/packet_handler.py to packet_handler.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/template_exp_standalone.py to template_exp_standalone.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/calibrate_bipolars.py to calibrate_bipolars.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/scope_interface.py to scope_interface.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/custom_widgets.py to custom_widgets.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/template_scope.py to template_scope.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/experiment.py to experiment.pyc
+byte-compiling build/bdist.linux-x86_64/egg/Labtools/experiment_standalone.py to experiment_standalone.pyc
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+installing scripts to build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+running install_scripts
+running build_scripts
+copying Labtools/bin/oscilloscope -> build/scripts-2.7
+changing mode of build/scripts-2.7/oscilloscope from 644 to 755
+creating build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+copying build/scripts-2.7/oscilloscope -> build/bdist.linux-x86_64/egg/EGG-INFO/scripts
+changing mode of build/bdist.linux-x86_64/egg/EGG-INFO/scripts/oscilloscope to 755
+copying Labtools.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying Labtools.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying Labtools.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying Labtools.egg-info/requires.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying Labtools.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+creating 'dist/Labtools-0.1-py2.7.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+Processing Labtools-0.1-py2.7.egg
+Removing /usr/local/lib/python2.7/dist-packages/Labtools-0.1-py2.7.egg
+Copying Labtools-0.1-py2.7.egg to /usr/local/lib/python2.7/dist-packages
+Labtools 0.1 is already the active version in easy-install.pth
+Installing oscilloscope script to /usr/local/bin
+
+Installed /usr/local/lib/python2.7/dist-packages/Labtools-0.1-py2.7.egg
+Processing dependencies for Labtools==0.1
+Searching for pyqtgraph==0.9.10
+Best match: pyqtgraph 0.9.10
+pyqtgraph 0.9.10 is already the active version in easy-install.pth
+
+Using /usr/lib/python2.7/dist-packages
+Searching for scipy==0.13.3
+Best match: scipy 0.13.3
+scipy 0.13.3 is already the active version in easy-install.pth
+
+Using /usr/lib/python2.7/dist-packages
+Searching for numpy==1.9.2
+Best match: numpy 1.9.2
+Processing numpy-1.9.2-py2.7-linux-x86_64.egg
+Removing numpy 1.8.2 from easy-install.pth file
+numpy 1.9.2 is already the active version in easy-install.pth
+Installing f2py script to /usr/local/bin
+
+Using /usr/local/lib/python2.7/dist-packages/numpy-1.9.2-py2.7-linux-x86_64.egg
+Finished processing dependencies for Labtools==0.1

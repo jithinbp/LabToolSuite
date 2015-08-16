@@ -1,0 +1,43 @@
+Index: labtoolsuite-0.1/Makefile
+===================================================================
+--- /dev/null
++++ labtoolsuite-0.1/Makefile
+@@ -0,0 +1,17 @@
++DESTDIR =
++
++all:
++	DESTDIR=$(DESTDIR) python setup.py build
++	DESTDIR=$(DESTDIR) python3 setup.py build
++
++clean:
++	find . -name __PYCACHE__ -o -name "*.pyc" | xargs rm -rf
++	rm -rf build
++
++install:
++	python setup.py install --install-layout=deb \
++	         --root=$(DESTDIR)/ --prefix=/usr
++	python3 setup.py install --install-layout=deb \
++	         --root=$(DESTDIR)/ --prefix=/usr
++
++.PHONY: all clean install
+Index: labtoolsuite-0.1/setup.py
+===================================================================
+--- /dev/null
++++ labtoolsuite-0.1/setup.py
+@@ -0,0 +1,16 @@
++from distutils.core import setup
++
++setup(name='LabtoolSuite',
++      version='0.1',
++      description='Python Distribution Utilities',
++      author='Jithin BP',
++      author_email='jithinbp@gmail.com',
++      url='http://pythonhosted.org//LabtoolSuite/',
++      packages=[
++          'Labtools',
++          'Labtools.calib_data',
++          'Labtools.templates',
++          'Labtools.tests',
++          'Labtools.widgets',
++            ],
++     )

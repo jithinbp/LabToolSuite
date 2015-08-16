@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>849</width>
+    <height>479</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Experiments</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"> QPushButton{ background-image: url(:/images/bt_01_off.png);}
+ QPushButton:pressed {background-image:url(:/images/bt_01_on.png);}
+QFrame{background-color: rgb(21, 107, 113);}
+
+ QDockWidget {
+     border: 1px solid lightgray;
+ }
+
+ QDockWidget::title {
+     text-align: left; /* align the text to the left */
+     background: lightgray;
+     padding-left: 5px;
+	height:6px;
+ }
+
+ QDockWidget::close-button, QDockWidget::float-button {
+     border: 1px solid transparent;
+     background: darkgray;
+     padding: 0px;
+ }
+
+ QDockWidget::close-button:hover, QDockWidget::float-button:hover {
+     background: gray;
+ }
+
+ QDockWidget::close-button:pressed, QDockWidget::float-button:pressed {
+     padding: 1px -1px -1px 1px;
+ }
+
+
+
+border-color: rgb(29, 122, 162);
+</string>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="dockOptions">
+   <set>QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks</set>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>847</width>
+         <height>452</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QSplitter" name="graph_splitter">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>849</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="jui.rc"/>
+ </resources>
+ <connections/>
+ <slots>
+  <slot>add_a_widget()</slot>
+  <slot>addConsole()</slot>
+  <slot>size(int,int)</slot>
+  <slot>widget_ch1()</slot>
+  <slot>widget_ch2()</slot>
+  <slot>widget_ch3()</slot>
+  <slot>widget_ch4()</slot>
+  <slot>widget_ch5()</slot>
+  <slot>widget_sine1()</slot>
+  <slot>widget_sine2()</slot>
+  <slot>widget_volt1()</slot>
+  <slot>widget_volt2()</slot>
+  <slot>widget_volt3()</slot>
+  <slot>widget_volt4()</slot>
+  <slot>widget_volt5()</slot>
+  <slot>widget_voltAll()</slot>
+  <slot>widget_inductance()</slot>
+  <slot>widget_freq()</slot>
+  <slot>widget_high_freq()</slot>
+  <slot>widget_f2ftime()</slot>
+  <slot>widget_r2rtime()</slot>
+  <slot>widget_pulse()</slot>
+  <slot>widget_dutycycle()</slot>
+  <slot>widget_pvs1()</slot>
+  <slot>widget_pvs2()</slot>
+  <slot>widget_pvs3()</slot>
+  <slot>widget_pcs()</slot>
+ </slots>
+</ui>

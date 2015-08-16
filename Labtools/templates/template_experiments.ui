@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>237</width>
+    <height>512</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"> QPushButton{ background-image: url(:/images/bt_01_off.png);
+color: rgb(255, 255, 255);}
+ QPushButton:pressed {background-image:url(:/images/bt_01_on.png);}
+QFrame,QListWidget{background-color: rgb(21, 107, 113);}
+
+QLabel,QRadioButton,QCheckBox {color: rgb(255, 255, 255);}
+QLabel,QRadioButton,QCheckBox{background-color: rgba(0,0,0, 0);color: rgb(0,0,0);}
+QComboBox{background-color: rgba(255,255,255, 100);color: rgb(0,0,0);}
+
+border-color: rgb(29, 122, 162);
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(21, 107, 113);</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QListWidget" name="filenames"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>RUN Experiment</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>237</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>run_exp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>98</x>
+     <y>65</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>9</x>
+     <y>95</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>run_exp()</slot>
+ </slots>
+</ui>

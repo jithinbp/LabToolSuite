@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>I2C_class module &mdash; Lab ToolSuite Documentation</title>
+    
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Lab ToolSuite Documentation" href="index.html" />
+    <link rel="next" title="NRF24L01_class module" href="NRF24L01_class.html" />
+    <link rel="prev" title="SPI_class module" href="SPI_class.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="NRF24L01_class.html" title="NRF24L01_class module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="SPI_class.html" title="SPI_class module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Lab ToolSuite Quick ref</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-I2C_class">
+<span id="i2c-class-module"></span><h1>I2C_class module<a class="headerlink" href="#module-I2C_class" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="I2C_class.I2C">
+<em class="property">class </em><tt class="descclassname">I2C_class.</tt><tt class="descname">I2C</tt><big>(</big><em>H</em><big>)</big><a class="reference internal" href="_modules/I2C_class.html#I2C"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#I2C_class.I2C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Methods to interact with the I2C port. An instance of Labtools.Packet_Handler must be passed to the init function</p>
+<dl class="docutils">
+<dt>Example::  Read Values from an HMC5883L 3-axis Magnetometer(compass) [GY-273 sensor] connected to the I2C port</dt>
+<dd><div class="first highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ADDRESS</span> <span class="o">=</span> <span class="mh">0x1E</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">Labtools</span> <span class="kn">import</span> <span class="n">interface</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">I</span> <span class="o">=</span> <span class="n">interface</span><span class="o">.</span><span class="n">Interface</span><span class="p">()</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Alternately, you may skip using I2C as a child instance of Interface, </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># and instead use I2C=Labtools.I2C_class.I2C(Labtools.packet_handler.Handler())</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">I</span><span class="o">.</span><span class="n">I2C</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ADDRESS</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c"># writing to device mode</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">I</span><span class="o">.</span><span class="n">I2C</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mh">0x01</span><span class="p">)</span> <span class="c"># Set gain of the magnetometer</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">I</span><span class="o">.</span><span class="n">I2C</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">0</span><span class="o">&lt;&lt;</span><span class="mi">5</span><span class="p">)</span> <span class="c"># Select the smallest range</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">I</span><span class="o">.</span><span class="n">I2C</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>     <span class="c">#Stop the transfer</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">I</span><span class="o">.</span><span class="n">I2C</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ADDRESS</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c"># writing to device again</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">I</span><span class="o">.</span><span class="n">I2C</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mh">0x02</span><span class="p">)</span> <span class="c"># Select Mode configuration register to write to</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">I</span><span class="o">.</span><span class="n">I2C</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>    <span class="c"># Select Continuous measurement mode</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">I</span><span class="o">.</span><span class="n">I2C</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">I</span><span class="o">.</span><span class="n">I2C</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ADDRESS</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c"># writing to device</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">I</span><span class="o">.</span><span class="n">I2C</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">addr</span><span class="p">)</span> <span class="c"># Write address to read raw values starting that location.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">I</span><span class="o">.</span><span class="n">I2C</span><span class="o">.</span><span class="n">restart</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ADDRESS</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c">#Re write ADDRESS to I2C port, but in reading mode.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vals</span><span class="o">=</span><span class="n">I</span><span class="o">.</span><span class="n">I2C</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="c">#Read 6 bytes. 5 bytes with ack, and one with Nack (No acknowledge)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">I</span><span class="o">.</span><span class="n">I2C</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">int16</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">=</span><span class="n">int16</span><span class="p">((</span><span class="n">vals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="mi">8</span><span class="p">)</span><span class="o">|</span><span class="n">vals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>       <span class="c">#conversion to signed datatype</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span><span class="o">=</span><span class="n">int16</span><span class="p">((</span><span class="n">vals</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="mi">8</span><span class="p">)</span><span class="o">|</span><span class="n">vals</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="o">=</span><span class="n">int16</span><span class="p">((</span><span class="n">vals</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="mi">8</span><span class="p">)</span><span class="o">|</span><span class="n">vals</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="method">
+<dt id="I2C_class.I2C.config">
+<tt class="descname">config</tt><big>(</big><em>freq</em><big>)</big><a class="reference internal" href="_modules/I2C_class.html#I2C.config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#I2C_class.I2C.config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets frequency for I2C transactions</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Arguments</strong></th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>freq</td>
+<td>I2C frequency</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="I2C_class.I2C.start">
+<tt class="descname">start</tt><big>(</big><em>address</em>, <em>rw</em><big>)</big><a class="reference internal" href="_modules/I2C_class.html#I2C.start"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#I2C_class.I2C.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initiates I2C transfer to address via the I2C port</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Arguments</strong></th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>address</td>
+<td>I2C slave address</td>
+</tr>
+<tr class="row-odd"><td>rw</td>
+<td>Read/write.
+* 0 for writing
+* 1 for reading.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="I2C_class.I2C.stop">
+<tt class="descname">stop</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/I2C_class.html#I2C.stop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#I2C_class.I2C.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>stops I2C transfer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="I2C_class.I2C.wait">
+<tt class="descname">wait</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/I2C_class.html#I2C.wait"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#I2C_class.I2C.wait" title="Permalink to this definition">¶</a></dt>
+<dd><p>wait for I2C</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="I2C_class.I2C.send">
+<tt class="descname">send</tt><big>(</big><em>data</em><big>)</big><a class="reference internal" href="_modules/I2C_class.html#I2C.send"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#I2C_class.I2C.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>SENDS data over I2C.
+The I2C bus needs to be initialized and set to the correct slave address first.
+Use I2C.start(address) for this.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Arguments</strong></th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>data</td>
+<td>Sends data byte over I2C bus</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="I2C_class.I2C.send_burst">
+<tt class="descname">send_burst</tt><big>(</big><em>data</em><big>)</big><a class="reference internal" href="_modules/I2C_class.html#I2C.send_burst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#I2C_class.I2C.send_burst" title="Permalink to this definition">¶</a></dt>
+<dd><p>SENDS data over I2C. The function does not wait for the I2C to finish before returning.
+It is used for sending large packets quickly.
+The I2C bus needs to be initialized and set to the correct slave address first.
+Use start(address) for this.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Arguments</strong></th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>data</td>
+<td>Sends data byte over I2C bus</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nothing</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="I2C_class.I2C.restart">
+<tt class="descname">restart</tt><big>(</big><em>address</em>, <em>rw</em><big>)</big><a class="reference internal" href="_modules/I2C_class.html#I2C.restart"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#I2C_class.I2C.restart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initiates I2C transfer to address</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Arguments</strong></th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>address</td>
+<td>I2C slave address</td>
+</tr>
+<tr class="row-odd"><td>rw</td>
+<td>Read/write.
+* 0 for writing
+* 1 for reading.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="I2C_class.I2C.read">
+<tt class="descname">read</tt><big>(</big><em>length</em><big>)</big><a class="reference internal" href="_modules/I2C_class.html#I2C.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#I2C_class.I2C.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads a fixed number of data bytes from I2C device. Fetches length-1 bytes with acknowledge bits for each, +1 byte
+with Nack.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Arguments</strong></th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>length</td>
+<td>number of bytes to read from I2C bus</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="I2C_class.I2C.read_repeat">
+<tt class="descname">read_repeat</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/I2C_class.html#I2C.read_repeat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#I2C_class.I2C.read_repeat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="I2C_class.I2C.read_end">
+<tt class="descname">read_end</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/I2C_class.html#I2C.read_end"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#I2C_class.I2C.read_end" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="I2C_class.I2C.read_status">
+<tt class="descname">read_status</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/I2C_class.html#I2C.read_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#I2C_class.I2C.read_status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="I2C_class.I2C.scan">
+<tt class="descname">scan</tt><big>(</big><em>frequency=100000</em><big>)</big><a class="reference internal" href="_modules/I2C_class.html#I2C.scan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#I2C_class.I2C.scan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="SPI_class.html"
+                        title="previous chapter">SPI_class module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="NRF24L01_class.html"
+                        title="next chapter">NRF24L01_class module</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/I2C_class.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="NRF24L01_class.html" title="NRF24L01_class module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="SPI_class.html" title="SPI_class module"
+             >previous</a> |</li>
+        <li><a href="index.html">Lab ToolSuite Quick ref</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Jithin B..
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

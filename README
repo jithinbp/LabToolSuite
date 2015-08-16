@@ -1,0 +1,5 @@
+sudo easy_install LabtoolSuite
+
+Launch oscilloscope utility from the terminal.  The binary is installed to /usr/local/bin/
+$oscilloscope
+
